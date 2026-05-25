@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+@theme {
+  /* ── Light-mode palette ──────────────────────────────────── */
+  --color-primary: #1e4a24;
+  --color-primary-dark: #132e17;
+  --color-primary-light: #2c7a3a;
+  --color-secondary: #a8c8b0;
+  --color-secondary-dark: #82a88c;
+  --color-secondary-light: #cce0d2;
+
+  /* Legacy aliases */
+  --color-forest: #1e4a24;
+  --color-sage: #2c7a3a;
+  --color-mint: #52b87a;
+  --color-cream: #e3eeea;
+  --color-gold: #82a88c;
+  --color-gold-light: #a8c8b0;
+  --color-charcoal: #161e17;
+  --color-warm-white: #f7f3eb;
+  --color-rust: #38964e;
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+}
+
+/* ── Dark-mode token overrides ───────────────────────────────── */
+.dark {
+  --color-primary: #2b4224;
+  --color-primary-dark: #1e2e18;
+  --color-primary-light: #3d6133;
+  --color-secondary: #c9ccb4;
+  --color-secondary-dark: #a8ac94;
+  --color-secondary-light: #e2e4d6;
+  --color-forest: #2b4224;
+  --color-sage: #3d6133;
+  --color-mint: #8eba7e;
+  --color-cream: #edf0e4;
+  --color-gold: #a8ac94;
+  --color-gold-light: #c9ccb4;
+  --color-charcoal: #1c1f1a;
+  --color-warm-white: #f5f6f0;
+  --color-rust: #7a6b3a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  font-family: var(--font-dm-sans), sans-serif;
+  background-color: var(--color-warm-white);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Course tag variants */
+.tag-rust {
+  background-color: rgba(56, 150, 78, 0.12);
+  color: #38964e;
+}
+
+/* Base custom classes if needed */
+.card-shadow {
+  box-shadow: 0 8px 32px rgba(30,74,36,0.07), 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 16px 48px rgba(30,74,36,0.13), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Dark mode transitions */
+body, nav, footer, div, section, a, p, h1, h2, h3, h4, h5, h6, span, button, input, select, textarea {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism utilities */
+.glass-nav {
+  background: rgba(30, 74, 36, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 200, 176, 0.18);
+  box-shadow: 0 8px 32px rgba(30, 74, 36, 0.26), 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.glass-nav-scrolled {
+  background: rgba(19, 46, 23, 0.97);
+  box-shadow: 0 16px 48px rgba(30, 74, 36, 0.38), 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* Dark mode specific style classes */
+.dark body {
+  background-color: #1a1f1a;
+  color: #e8f0e0;
+}
+
+.dark .glass-nav {
+  background: rgba(26, 31, 26, 0.96) !important;
+  border-color: rgba(142, 186, 126, 0.1) !important;
+}
+
+/* SVG state US Map custom styling */
+.state-path {
+  fill: #e3eeea;
+  stroke: #a8c8b0;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.state-path:hover {
+  fill: #52b87a;
+  stroke: #1e4a24;
+}
+
+.state-path.active-state {
+  fill: #2c7a3a;
+  stroke: #e3eeea;
+  filter: drop-shadow(0px 4px 8px rgba(30,74,36,0.28));
+}
+
+.dark .state-path {
+  fill: #242924;
+  stroke: #3d6133;
+}
+
+.dark .state-path:hover {
+  fill: #8eba7e;
+  stroke: #edf0e4;
+}
+
+.dark .state-path.active-state {
+  fill: #8eba7e;
+  stroke: #edf0e4;
+}
