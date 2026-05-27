@@ -4,6 +4,7 @@ import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import Navbar from '@/components/Navbar';
 import ConditionalFooter from '@/components/ConditionalFooter';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -53,6 +54,7 @@ export default function RootLayout({
           <main className="flex-grow flex flex-col">{children}</main>
           <ConditionalFooter />
         </AuthProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
