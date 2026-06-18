@@ -55,6 +55,7 @@ export default function RootLayout({
           <ConditionalFooter />
           <SpeedInsights />
         </AuthProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
