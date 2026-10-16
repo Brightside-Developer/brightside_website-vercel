@@ -119,7 +119,7 @@ export default function About() {
       <PageHero
         eyebrow="Our Story"
         title={<>Built on the belief that <em className="text-rust dark:text-mint">everyone deserves</em> financial confidence</>}
-        description="Brightside Finance Foundation is a comprehensive initiative designed to empower students and adults with essential financial literacy skills. By providing accessible tools, interactive workshops, and tailored resources, Brightside equips individuals to confidently manage budgets, navigate financial challenges, and build a strong foundation for long-term financial independence."
+        description="Brightside Finance Foundation is dedicated to serving Frisco’s youth by making financial literacy accessible and empowering individuals with the skills to achieve long-term financial independence. Through interactive workshops, practical tools, and tailored resources, we help students and adults build confidence in managing budgets, navigating financial challenges, and making informed financial decisions."
       />
 
       {/* --- ORG INFO (address + EIN) --- */}
