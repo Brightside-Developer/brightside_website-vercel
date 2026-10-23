@@ -24,8 +24,8 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       // Supabase storage + Google OAuth avatars
       "img-src 'self' data: blob: https://*.supabase.co https://*.googleusercontent.com",
-      // Supabase REST + Realtime WebSocket
-      "connect-src 'self' https://*.supabase.co wss://*.supabase.co",
+      // Supabase REST + Realtime WebSocket + Vercel Speed Insights
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.vercel-insights.com",
       // No iframes allowed (clickjacking protection)
       "frame-ancestors 'none'",
       "base-uri 'self'",
